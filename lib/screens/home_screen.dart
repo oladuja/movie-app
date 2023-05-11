@@ -20,6 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        onPageChanged: (value) {
+          setState(() {
+            index = value;
+          });
+        },
         controller: pageController,
         children: const [
           MainScreen(),
